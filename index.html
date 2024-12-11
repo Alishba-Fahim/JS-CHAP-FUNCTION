@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Examples</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <h1>JavaScript Function Examples</h1>
+
+    <!-- 1. Function to display current date and time -->
+    <h2>1. Display Current Date & Time</h2>
+    <p>
+        <script>
+            function displayCurrentDateTime() {
+                let currentDateTime = new Date();
+                document.write("Current Date and Time: " + currentDateTime + "<br><br>");
+            }
+            displayCurrentDateTime();
+        </script>
+    </p>
+
+    <!-- 2. Function to greet user with their full name -->
+    <h2>2. Greet User with Full Name</h2>
+    <p>
+        <script>
+            function greetUser(firstName, lastName) {
+                let fullName = firstName + " " + lastName;
+                document.write("Hello, " + fullName + "! Welcome!<br><br>");
+            }
+            greetUser("Meerub", "Laiba");
+        </script>
+    </p>
+
+    <!-- 3. Function to add two numbers -->
+    <h2>3. Add Two Numbers</h2>
+    <p>
+        <script>
+            function addTwoNumbers() {
+                let num1 = parseFloat(prompt("Enter the first number:"));
+                let num2 = parseFloat(prompt("Enter the second number:"));
+                let sum = num1 + num2;
+                document.write("The sum of " + num1 + " and " + num2 + " is: " + sum + "<br><br>");
+            }
+            addTwoNumbers();
+        </script>
+    </p>
+
+    <!-- 4. Calculator function -->
+    <h2>4. Calculator</h2>
+    <p>
+        <script>
+            function calculator(num1, num2, operator) {
+                let result;
+                if (operator === "+") {
+                    result = num1 + num2;
+                } else if (operator === "-") {
+                    result = num1 - num2;
+                } else if (operator === "*") {
+                    result = num1 * num2;
+                } else if (operator === "/") {
+                    result = num1 / num2;
+                } else {
+                    result = "Invalid operator!";
+                }
+                document.write("Result of " + num1 + " " + operator + " " + num2 + " = " + result + "<br><br>");
+            }
+            calculator(10, 5, "+");
+            calculator(10, 5, "-");
+            calculator(10, 5, "*");
+            calculator(10, 5, "/");
+        </script>
+    </p>
+
+    <!-- 5. Function to square a number -->
+    <h2>5. Square a Number</h2>
+    <p>
+        <script>
+            function squareNumber() {
+                let num = parseFloat(prompt("Enter a number to square:"));
+                let squared = num * num;
+                document.write("The square of " + num + " is: " + squared + "<br><br>");
+            }
+            squareNumber();
+        </script>
+    </p>
+
+    <!-- 6. Function to compute factorial -->
+    <h2>6. Compute Factorial</h2>
+    <p>
+        <script>
+            function factorial() {
+                let num = parseInt(prompt("Enter a number to calculate its factorial:"));
+                let result = 1;
+                if (num < 0) {
+                    document.write("Factorial is not defined for negative numbers.<br>");
+                } else {
+                    for (let i = 1; i <= num; i++) {
+                        result *= i;
+                    }
+                    document.write("The factorial of " + num + " is: " + result + "<br><br>");
+                }
+            }
+            factorial();
+        </script>
+    </p>
+
+    <!-- 7. Function to display counting -->
+    <h2>7. Display Counting</h2>
+    <p>
+        <script>
+            function displayCounting() {
+                let startNum = parseInt(prompt("Enter the start number:"));
+                let endNum = parseInt(prompt("Enter the end number:"));
+                for (let i = startNum; i <= endNum; i++) {
+                    document.write(i + "<br><br>");
+                }
+            }
+            displayCounting();
+        </script>
+    </p>
+
+    <!-- 8. Function to compute hypotenuse -->
+    <h2>8. Compute Hypotenuse of a Triangle</h2>
+    <p>
+        <script>
+            function calculateHypotenuse() {
+                let base = parseFloat(prompt("Enter the base of the triangle:"));
+                let perpendicular = parseFloat(prompt("Enter the perpendicular of the triangle:"));
+                function calculateSquare(num) {
+                    return num * num;
+                }
+                let baseSquare = calculateSquare(base);
+                let perpendicularSquare = calculateSquare(perpendicular);
+                let hypotenuse = Math.sqrt(baseSquare + perpendicularSquare);
+                document.write("The hypotenuse of the triangle is: " + hypotenuse + "<br><br>");
+            }
+            calculateHypotenuse();
+        </script>
+    </p>
+
+    <!-- 9. Function to calculate rectangle area -->
+    <h2>9. Calculate Rectangle Area</h2>
+    <p>
+        <script>
+            function calculateArea(width, height) {
+                let area = width * height;
+                document.write("The area of the rectangle is: " + area + "<br><br>");
+            }
+            calculateArea(5, 10);
+            let rectangleWidth = 7;
+            let rectangleHeight = 12;
+            calculateArea(rectangleWidth, rectangleHeight);
+        </script>
+    </p>
+
+    <!-- 10. Function to check palindrome -->
+    <h2>10. Check if a String is a Palindrome</h2>
+    <p>
+        <script>
+            function isPalindrome(str) {
+                let lowerCaseStr = str.toLowerCase();
+                let reversedStr = lowerCaseStr.split("").reverse().join("");
+                if (lowerCaseStr === reversedStr) {
+                    document.write(str + " is a palindrome.<br>");
+                } else {
+                    document.write(str + " is not a palindrome.<br><br>");
+                }
+            }
+            isPalindrome("madam");
+            isPalindrome("hello");
+        </script>
+    </p>
+
+    <!-- 11. Function to capitalize first letter of each word -->
+    <h2>11. Capitalize First Letter of Each Word</h2>
+    <p>
+        <script>
+            function capitalizeWords(str) {
+                let words = str.split(" ");
+                for (let i = 0; i < words.length; i++) {
+                    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+                }
+                let capitalizedStr = words.join(" ");
+                document.write("Original string: " + str + "<br>");
+                document.write("Capitalized string: " + capitalizedStr + "<br><br>");
+            }
+            capitalizeWords("the quick brown fox");
+        </script>
+    </p>
+
+    <!-- 12. Function to find the longest word -->
+    <h2>12. Find the Longest Word</h2>
+    <p>
+        <script>
+            function findLongestWord(str) {
+                let words = str.split(" ");
+                let longestWord = "";
+                for (let i = 0; i < words.length; i++) {
+                    if (words[i].length > longestWord.length) {
+                        longestWord = words[i];
+                    }
+                }
+                document.write("The longest word in the string is: " + longestWord + "<br><br>");
+            }
+            findLongestWord("Web Development Tutorial");
+        </script>
+    </p>
+
+    <!-- 13. Function to count letter occurrences -->
+    <h2>13. Count Letter Occurrences</h2>
+    <p>
+        <script>
+            function countOccurrences(str, letter) {
+                let count = 0;
+                for (let i = 0; i < str.length; i++) {
+                    if (str.charAt(i) === letter) {
+                        count++;
+                    }
+                }
+                document.write("The letter '" + letter + "' appears " + count + " times in the string '" + str + "'.<br><br>");
+            }
+            countOccurrences("JSResourceS.com", "o");
+        </script>
+    </p>
+
+    <!-- 14. Geometrizer functions -->
+    <h2>14. Geometrizer - Circle Properties</h2>
+    <p>
+        <script>
+            function calcCircumference(radius) {
+                let circumference = 2 * Math.PI * radius;
+                document.write("The circumference is " + circumference.toFixed(2) + "<br>");
+            }
+            function calcArea(radius) {
+                let area = Math.PI * Math.pow(radius, 2);
+                document.write("The area is " + area.toFixed(2) + "<br>");
+            }
+            let radius = parseFloat(prompt("Enter the radius of the circle:"));
+            calcCircumference(radius);
+            calcArea(radius);
+        </script>
+    </p>
+
+</body>
+</html>
